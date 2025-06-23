@@ -29,35 +29,47 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <div className="container mx-auto my-16">
-      <div className=" w-full flex justify-center flex-col items-center">
-        <h3 className="text-[#112211] font-[600] text-[32px] ">
-          Testimonials{" "}
+    <div className="container mx-auto my-16 px-4">
+      {/* Header */}
+      <div className="w-full flex flex-col items-center text-center">
+        <h3 className="text-[#112211] font-semibold text-2xl sm:text-3xl">
+          Testimonials
         </h3>
-        <h1 className="text-[#112211] font-[700] text-[40px] ">
-          What Our Clients Say{" "}
+        <h1 className="text-[#112211] font-bold text-3xl sm:text-4xl md:text-5xl mt-2">
+          What Our Clients Say
         </h1>
       </div>
-      <div className=" grid lg:grid-cols-3 md:grid-cols-2 mt-10 gap-10">
+
+      {/* Cards Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
         {testimonials.map((card, index) => (
           <div
             key={index}
-            className="w-[400px] h-[362px] rounded-2xl bg-[#F9F2EC] border-[2px] border-[#C3A8A8] p-10"
+            className="rounded-2xl bg-[#F9F2EC] border-2 border-[#C3A8A8] p-6 sm:p-8 flex flex-col justify-between"
           >
-            <div className="flex flex-col justify-start items-start gap-8 ">
-              <div className="flex gap-10 w-full">
+            <div className="flex flex-col gap-6">
+              {/* Avatar and Name */}
+              <div className="flex gap-6 items-center">
                 <Avatar
-                  sx={{ width: 70, height: 70 }}
+                  sx={{ width: 64, height: 64 }}
                   alt={card.name}
                   src={card.image}
                 />
-                <div className="h-full flex flex-col justify-between items-start">
-                  <h1 className="font-[600] text-[32px]">{card.name}</h1>
-                  <p className="font-[500] text-[16px]">{card.role}</p>
+                <div>
+                  <h1 className="font-semibold text-lg sm:text-xl md:text-2xl">
+                    {card.name}
+                  </h1>
+                  <p className="text-sm sm:text-base text-[#444] font-medium">
+                    {card.role}
+                  </p>
                 </div>
               </div>
-              <Rating value={card.rating} size="large" readOnly />
-              <p className="text-[#112211] font-[400] text-[16px] text-start">
+
+              {/* Rating */}
+              <Rating value={card.rating} size="medium" readOnly />
+
+              {/* Review */}
+              <p className="text-[#112211] font-normal text-sm sm:text-base leading-relaxed">
                 "{card.review}"
               </p>
             </div>

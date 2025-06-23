@@ -9,7 +9,7 @@ import UpcomingOffers from "../../components/homeComponents/upcomingOffers";
 
 export function Home() {
   return (
-    <div className="bg-[#fafbfc]  ">
+    <div className="bg-[#fafbfc]   ">
       <HeroSection />
       <SearchOption />
       <UpcomingOffers />
