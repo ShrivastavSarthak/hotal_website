@@ -1,4 +1,3 @@
-import Footer from "../../components/footer/footer";
 import HeroSection from "../../components/homeComponents/heroSection";
 import Location from "../../components/homeComponents/location";
 import PropertyManagement from "../../components/homeComponents/propertyMamagement";
@@ -17,7 +16,6 @@ export function Home() {
       <Location/>
       <PropertyManagement />
       <Testimonials />
-      <Footer />
     </div>
   );
 }

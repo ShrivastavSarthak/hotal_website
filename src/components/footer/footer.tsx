@@ -1,38 +1,44 @@
 import { Avatar, Button, TextField } from "@mui/material";
 import footerImage from "../../assets/footer.jpg";
 
-export default function Footer() {
+export default function Footer({
+  isFooterImage = true,
+}: {
+  isFooterImage?: boolean;
+}) {
   return (
     <div className="mt-20">
-      <div className="h-[55vh] relative">
-        <img
-          src={footerImage}
-          alt="Footer Background"
-          className="w-full h-full object-cover"
-        />
+      {isFooterImage && (
+        <div className="h-[55vh] relative">
+          <img
+            src={footerImage}
+            alt="Footer Background"
+            className="w-full h-full object-cover"
+          />
 
-        {/* Centered overlay */}
-        <div className="absolute inset-0 flex flex-col justify-center items-center px-4 text-center">
-          <h1 className="font-semibold text-[#112211] text-2xl sm:text-3xl md:text-4xl leading-snug">
-            Register now for this weekend and <br className="hidden sm:block" />{" "}
-            save up to 10%!
-          </h1>
+          {/* Centered overlay */}
+          <div className="absolute inset-0 flex flex-col justify-center items-center px-4 text-center">
+            <h1 className="font-semibold text-[#112211] text-2xl sm:text-3xl md:text-4xl leading-snug">
+              Register now for this weekend and{" "}
+              <br className="hidden sm:block" /> save up to 10%!
+            </h1>
 
-          <Button
-            sx={{
-              backgroundColor: "#EE4816",
-              color: "#fff",
-              "&:hover": { backgroundColor: "#d43c12" },
-              borderRadius: "2rem",
-              marginTop: "1.5rem",
-              paddingInline: "1.5rem",
-              paddingBlock: "0.75rem",
-            }}
-          >
-            Book Now
-          </Button>
+            <Button
+              sx={{
+                backgroundColor: "#EE4816",
+                color: "#fff",
+                "&:hover": { backgroundColor: "#d43c12" },
+                borderRadius: "2rem",
+                marginTop: "1.5rem",
+                paddingInline: "1.5rem",
+                paddingBlock: "0.75rem",
+              }}
+            >
+              Book Now
+            </Button>
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="container mx-auto">
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mt-10 mx-5">

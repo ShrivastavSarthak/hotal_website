@@ -1,6 +1,7 @@
 import homeImage from "@/assets/homeImg.jpg";
 import DynamicImageHero from "../../ui/imageHero";
-export default function HeroSection() {
+
+export default function PropertyHeroSection() {
   return (
     <DynamicImageHero
       image={homeImage}
